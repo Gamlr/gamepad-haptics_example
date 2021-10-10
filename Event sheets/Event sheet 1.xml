@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <event-block sid="8382937877082562">
+            <conditions>
+                <condition id="0" inverted="1" name="Compare text" sid="276172876734357" type="Strong">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                    <param id="1" name="Case">0</param>
+                </condition>
+                <condition id="0" inverted="1" name="Compare text" sid="1374722919558576" type="Weak">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                    <param id="1" name="Case">0</param>
+                </condition>
+                <condition id="0" inverted="1" name="Compare text" sid="3888128505500629" type="StartDelay">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                    <param id="1" name="Case">0</param>
+                </condition>
+                <condition id="0" inverted="1" name="Compare text" sid="939613068725690" type="Duration">
+                    <param id="0" name="Text">&quot;&quot;</param>
+                    <param id="1" name="Case">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="4235181852580556" type="Text">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="3" name="Set enabled" sid="576106105382722" type="Rumble">
+                    <param id="0" name="Mode">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4099579231717038">
+            <conditions>
+                <condition id="-22" name="Else" sid="3931602769303664" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="834068898595326" type="Text">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="3" name="Set enabled" sid="474540968953728" type="Rumble">
+                    <param id="0" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="455474835541575">
+            <conditions>
+                <condition id="0" name="On clicked" sid="30295549653163" type="Rumble" />
+            </conditions>
+            <actions>
+                <action id="1" name="Rumble" sid="2596500514227132" type="GamepadRumbleAddon">
+                    <param id="0" name="Index">List.SelectedIndex</param>
+                    <param id="1" name="Duration">float(Duration.Text)</param>
+                    <param id="2" name="Strong mangitude">float(Strong.Text)</param>
+                    <param id="3" name="Weak magnitude">float(Weak.Text)</param>
+                    <param id="4" name="Start delay">float(StartDelay.Text)</param>
+                    <param id="5" name="Tag">&quot;&quot;</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block disabled="1" sid="218423097055327">
+                    <conditions>
+                        <condition id="2" name="Has rumble support" sid="532287972907677" type="GamepadRumbleAddon">
+                            <param id="0" name="Index">List.SelectedIndex</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block disabled="1" sid="746472026236743">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="317437372296718" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="685345661750976" type="Log">
+                            <param id="0" name="Text">&quot;Controller doesn&apos;t support haptics or is not available to your browser&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="572153930236758">
+            <conditions>
+                <condition id="4" name="Has gamepads" sid="9565770741711975" type="Gamepad" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="551202588328492">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="389235411758497" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="11" name="Clear" sid="716362401441264" type="List" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="103126069058846">
+                            <conditions>
+                                <condition id="-12" name="Repeat" sid="939134167767366" type="System">
+                                    <param id="0" name="Count">Gamepad.GamepadCount</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="7" name="Add item" sid="939560481125307" type="List">
+                                    <param id="0" name="Text">Gamepad.GamepadID(loopindex)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="924106330384522">
+            <conditions>
+                <condition id="0" name="On rumble done" sid="432699564962121" type="GamepadRumbleAddon">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="917860077625856" type="Log">
+                    <param id="0" name="Text">&quot;Haptic effect done&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="597539319112158">
+            <conditions>
+                <condition id="1" name="On rumble errored" sid="792290617739293" type="GamepadRumbleAddon">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="642560698507298" type="Log">
+                    <param id="0" name="Text">&quot;Haptic effect errored: &quot; &amp; GamepadRumbleAddon.LastError</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
