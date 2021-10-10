@@ -4,6 +4,7 @@
     <name>Event sheet 1</name>
     <events>
         <variable constant="0" name="timer" sid="878896309705643" static="0" type="number">0</variable>
+        <variable constant="0" name="timeprint" sid="970310311250734" static="0" type="text"></variable>
         <event-block sid="8382937877082562">
             <conditions>
                 <condition id="0" inverted="1" name="Compare text" sid="276172876734357" type="Strong">
@@ -44,6 +45,57 @@
                     <param id="0" name="Mode">0</param>
                 </action>
             </actions>
+        </event-block>
+        <event-block sid="686870444964819">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="679779657339568" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="872907669387396">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="327023302485492" type="System">
+                            <param id="0" name="Variable">timer</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="0" name="Set text" sid="924880338562071" type="Timer">
+                            <param id="0" name="Text">time - 1</param>
+                        </action>
+                        <action disabled="1" id="0" name="Set text" sid="576656195680063" type="Timer">
+                            <param id="0" name="Text">&quot;text&quot;</param>
+                        </action>
+                        <action disabled="1" id="0" name="Set text" sid="583718724394243" type="Timer">
+                            <param id="0" name="Text">time</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="838259044842863" type="System">
+                            <param id="0" name="Variable">timeprint</param>
+                            <param id="1" name="Value">timer</param>
+                        </action>
+                        <action id="0" name="Set text" sid="337125115591076" type="Timer">
+                            <param id="0" name="Text">timeprint</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="367043015491994">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="709587379939518" type="System">
+                            <param id="0" name="Variable">timer</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="958813068153088" type="Timer">
+                            <param id="0" name="Text">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="455474835541575">
             <conditions>

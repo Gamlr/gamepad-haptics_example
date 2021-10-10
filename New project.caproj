@@ -94,6 +94,9 @@
         <object-type name="TxtSeconds" sid="717824360101980">
             <plugin id="Text" />
         </object-type>
+        <object-type name="Timer" sid="300585733367715">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
