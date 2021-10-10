@@ -79,6 +79,21 @@
         <object-type name="Log" sid="984113251397083">
             <plugin id="Text" />
         </object-type>
+        <object-type name="Text2" sid="272135612825134">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Button" sid="437513749041815">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="TextBox" sid="683961189551055">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="TxtUsefulFor" sid="551545972859867">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="TxtSeconds" sid="717824360101980">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
