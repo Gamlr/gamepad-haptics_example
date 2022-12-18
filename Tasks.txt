@@ -1,0 +1,2 @@
+- Screen: no gamepad detected. Press any button
+- Detect PS4 gamepad, show it, change screen design, show gamepad button indicator in Rumble button
